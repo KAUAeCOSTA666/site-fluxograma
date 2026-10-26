@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101322" />
+  <meta name="description" content="Responda perguntas e construa seu próprio fluxograma interativo." />
+  <title>FluxoLab — Seu caminho, suas escolhas</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="FluxoLab início">
+      <span class="brand-icon">⑂</span>
+      <span>
+        <strong>FluxoLab</strong>
+        <small>IDEIAS EM MOVIMENTO</small>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <span class="live-status">
+        <span class="live-dot"></span> INTERATIVO
+      </span>
+      <button id="resetBtn" class="reset-btn" type="button">
+        ↻ Reiniciar
+      </button>
+    </div>
+  </header>
+
+  <main class="app-container">
+    <section class="hero">
+      <span class="eyebrow">✦ DESCUBRA SEU PRÓPRIO CAMINHO</span>
+      <h1>Uma resposta.<br /><span>Um novo caminho.</span></h1>
+      <p>
+        Responda às perguntas e veja suas escolhas se transformarem
+        em um fluxograma único, criado por você.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <section class="question-panel panel">
+        <div class="panel-heading">
+          <span class="section-icon">✳</span>
+          <div>
+            <h2>Sua próxima decisão</h2>
+            <p>Escolha o caminho que mais combina com você.</p>
+          </div>
+        </div>
+
+        <div class="progress-info">
+          <span id="stepLabel">PERGUNTA 01</span>
+          <span id="progressLabel">0% concluído</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <div id="questionArea" aria-live="polite">
+          <span class="category-tag">CARREGANDO</span>
+          <h3>Preparando sua jornada...</h3>
+          <div id="answers" class="answers"></div>
+        </div>
+
+        <p class="keyboard-hint">
+          ✦ Não existe resposta errada. Seu caminho é único.
+        </p>
+      </section>
+
+      <section class="flow-panel panel">
+        <div class="flow-heading">
+          <div>
+            <span class="eyebrow">VISUALIZAÇÃO EM TEMPO REAL</span>
+            <h2>Seu fluxograma</h2>
+          </div>
+          <span id="nodeCount" class="node-count">1 NÓ</span>
+        </div>
+
+        <div id="flowCanvas" class="flow-canvas"
+             aria-label="Fluxograma das suas respostas">
+          <div class="empty-flow">
+            <span class="empty-icon">⑂</span>
+            <p>Seu fluxo aparecerá aqui.</p>
+          </div>
+        </div>
+
+        <div class="flow-legend">
+          <span><i class="legend-dot purple"></i> Início</span>
+          <span><i class="legend-dot blue"></i> Decisão</span>
+          <span><i class="legend-dot green"></i> Resultado</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-icon purple-bg">⑂</span>
+        <div><strong id="statNodes">1</strong><small>Nós criados</small></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon blue-bg">✓</span>
+        <div><strong id="statAnswers">0</strong><small>Respostas dadas</small></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon orange-bg">✦</span>
+        <div><strong id="statProgress">0%</strong><small>Jornada concluída</small></div>
+      </article>
+    </section>
+
+    <section id="resultPanel" class="result-panel panel" hidden>
+      <span class="eyebrow">✦ FIM DA JORNADA</span>
+      <h2>Seu caminho foi construído!</h2>
+      <p id="resultText"></p>
+      <button id="againBtn" class="primary-btn" type="button">
+        Criar outro fluxograma ↗
+      </button>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+      <p class="corinthians">
+        🖤 Corinthians não deve ser rebaixado 🖤
+      </p>
+      <p>FluxoLab · Cada escolha conta.</p>
+    </footer>
+  </main>
+</body>
+</html>
